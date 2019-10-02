@@ -1,0 +1,114 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="./static/js/homeScript.js"></script>
+    <link rel="stylesheet" href="./static/css/gameStyle.css">
+    <script src="/socket.io/socket.io.js"></script> 
+</head>
+<body>
+    <p id="gameId" hidden>{{ gameId }}</p>
+    <p id="redReady" hidden>{{ redReady }}</p>
+    <p id="blueReady" hidden>{{ blueReady }}</p>
+    <p id="blueReady" hidden>{{ gameStatus }}</p>
+    <div class="container" id="homeScreen">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Codenames</h1>    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>
+                    Codenames is a 2015 card game for 4–8 players designed by Vlaada Chvátil. Two teams compete 
+                    by each having a Spymaster give one word clues which can point to multiple 
+                    words on the board. The other players on the team attempt to guess their team's words while 
+                    avoiding the words of the other team. In the 2–3 player variant, one Spymaster gives clues 
+                    to the other player or players.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h2>Game ID: {{ gameId }}</h2>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Red Captain: <span id="redStatus">Not Ready</span></h3>
+                <button type="button" id="redButton" class="btn btn-primary">Claim Red Captain</button>
+            </div>
+            <div class="col-md-6">
+                <h3>Blue Captain: <span id="blueStatus">Not Ready</span></h3>
+                <button type="button" id="blueButton" class="btn btn-primary">Claim Blue Captain</button>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" id="button" class="btn btn-primary" disabled>Start</button>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="gameScreen">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Codenames</h1>    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td id="cell0" class="{{ randomClasses.0 }}">{{ gameWords.0 }}</td>
+                            <td id="cell1" class="{{ randomClasses.1 }}">{{ gameWords.1 }}</td>
+                            <td id="cell2" class="{{ randomClasses.2 }}">{{ gameWords.2 }}</td>
+                            <td id="cell3" class="{{ randomClasses.3 }}">{{ gameWords.3 }}</td>
+                            <td id="cell4" class="{{ randomClasses.4 }}">{{ gameWords.4 }}</td>
+                        </tr>
+                        <tr>
+                            <td id="cell5" class="{{ randomClasses.5 }}">{{ gameWords.5 }}</td>
+                            <td id="cell6" class="{{ randomClasses.6 }}">{{ gameWords.6 }}</td>
+                            <td id="cell7" class="{{ randomClasses.7 }}">{{ gameWords.7 }}</td>
+                            <td id="cell8" class="{{ randomClasses.8 }}">{{ gameWords.8 }}</td>
+                            <td id="cell9" class="{{ randomClasses.9 }}">{{ gameWords.9 }}</td>
+                        </tr>
+                        <tr>
+                            <td id="cell10" class="{{ randomClasses.10 }}">{{ gameWords.10 }}</td>
+                            <td id="cell11" class="{{ randomClasses.11 }}">{{ gameWords.11 }}</td>
+                            <td id="cell12" class="{{ randomClasses.12 }}">{{ gameWords.12 }}</td>
+                            <td id="cell13" class="{{ randomClasses.13 }}">{{ gameWords.13 }}</td>
+                            <td id="cell14" class="{{ randomClasses.14 }}">{{ gameWords.14 }}</td>
+                        </tr>
+                        <tr>
+                            <td id="cell15" class="{{ randomClasses.15 }}">{{ gameWords.15 }}</td>
+                            <td id="cell16" class="{{ randomClasses.16 }}">{{ gameWords.16 }}</td>
+                            <td id="cell17" class="{{ randomClasses.17 }}">{{ gameWords.17 }}</td>
+                            <td id="cell18" class="{{ randomClasses.18 }}">{{ gameWords.18 }}</td>
+                            <td id="cell19" class="{{ randomClasses.19 }}">{{ gameWords.19 }}</td>
+                        </tr>
+                        <tr>
+                            <td id="cell20" class="{{ randomClasses.20 }}">{{ gameWords.20 }}</td>
+                            <td id="cell21" class="{{ randomClasses.21 }}">{{ gameWords.21 }}</td>
+                            <td id="cell22" class="{{ randomClasses.22 }}">{{ gameWords.22 }}</td>
+                            <td id="cell23" class="{{ randomClasses.23 }}">{{ gameWords.23 }}</td>
+                            <td id="cell24" class="{{ randomClasses.24 }}">{{ gameWords.24 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" id="select" class="btn btn-primary" disabled>Select</button>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
