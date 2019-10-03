@@ -3,14 +3,17 @@ const path = require('path');
 const http = require('http');
 const socketIO = require('socket.io'); 
 
+const PORT = 4000;
+
 const app = express();
-const server = http.createServer(app);
+const server = app.listen(PORT); 
 const io = socketIO(server);
 
 const games = new Map();
 process.env.games = JSON.stringify(Array.from(games.entries()));
 
-const PORT = 4000;
+console.log('Listening on port ' + PORT + '...');
+
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use('/', require('./routes/routes'));
 
@@ -116,6 +119,3 @@ io.on('connection', (socket)=>{
         io.emit('select', msg);
     });
 });
-
-server.listen(PORT); 
-console.log('Listening on port ' + PORT + '...');
