@@ -88,7 +88,7 @@ router.get('/:gameId', function(req, res) {
         randomClasses: game['randomClasses']
     }
 
-    const template = fs.readFileSync(path.join(path.resolve(__dirname, '..') + '/public/html/home.html'), 'utf-8');
+    const template = fs.readFileSync(path.join(path.resolve(__dirname, '..') + '/public/html/game.html'), 'utf-8');
     const html = mustache.to_html(template, data);
     res.send(html);   
 });
@@ -112,34 +112,5 @@ function getRandomClasses() {
 
     return randomClasses;
 }
-
-// router.get('/:gameId/:color', function(req, res) {
-
-//     const gameId = req.params.gameId;
-//     const color = req.params.color;
-//     if(color != 'red' && color != 'blue') {
-//         res.send("Not found!");
-//     }
-
-//     const games =  new Map(JSON.parse(process.env.games));
-//     if(!games.get(gameId)) {
-//         res.send("Not found!");
-//         return;
-//     }
-
-//     if(games.get(gameId)[color + 'Connect']) {
-//         res.send("Nice try, punk!");
-//         return;
-//     }
-
-//     const data = {
-//         gameId: gameId,
-//         color: color
-//     }
-
-//     const template = fs.readFileSync(path.join(path.resolve(__dirname, '..') + '/public/html/home.html'), 'utf-8');
-//     const html = mustache.to_html(template, data);
-//     res.send(html);
-// });
 
 module.exports = router;
