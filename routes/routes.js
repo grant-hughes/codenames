@@ -66,7 +66,7 @@ router.get('/', function(req, res) {
 
     games.set(gameId, {redConnect: false, blueConnect: false, redReady: false, blueReady: false, gameStatus: 'home', gameWords: gameWords, randomClasses: randomClasses});
     process.env.games = JSON.stringify(Array.from(games.entries()));
-    res.redirect('/' + gameId);
+    res.redirect('https://grant-hughes-app.herokuapp.com/codenames/' + gameId);
 });
 
 router.get('/:gameId', function(req, res) {
