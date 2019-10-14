@@ -14,9 +14,7 @@ $(document).ready(function() {
 
   const gameId = $('#gameId').text();
 
-  console.log(location.port);
-
-  var socket = io("https://grant-hughes-app.herokuapp.com:" + location.port, { secure: true, reconnect: true, rejectUnauthorized: false });
+  var socket = io();
 
   var selectedIds = [];
   var selectedClasses = [];
