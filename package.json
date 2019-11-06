@@ -22,7 +22,7 @@
     "forever": "^0.15.3",
     "fs": "0.0.1-security",
     "http": "0.0.0",
-    "mongoose": "^5.7.1",
+    "mongoose": "^5.7.5",
     "mustache": "^3.1.0",
     "path": "^0.12.7",
     "pipe": "^1.1.0",
