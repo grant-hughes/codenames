@@ -53,7 +53,7 @@ router.get('/', function(req, res) {
 
     const gameId = Math.random().toString(36).substr(2, 4).toUpperCase();
 
-    var games =  new Map(JSON.parse(process.env.games));
+    var games = new Map(JSON.parse(process.env.games));
 
     var gameWords = [];
     for(var gameWordsIndex = 0; gameWordsIndex < 25; gameWordsIndex++) {
@@ -78,6 +78,8 @@ router.get('/:gameId', function(req, res) {
     }
 
     const game = games.get(gameId);
+
+    console.log(game);
 
     const data = {
         gameId: gameId,
