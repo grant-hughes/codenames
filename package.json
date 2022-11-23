@@ -27,7 +27,7 @@
     "path": "^0.12.7",
     "pipe": "^1.1.0",
     "request": "^2.88.0",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.5.0"
   },
   "devDependencies": {
     "mongodb-memory-server": "^5.2.5"
